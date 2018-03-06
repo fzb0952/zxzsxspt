@@ -1,0 +1,21 @@
+
+@media (max-width: 768px) {
+    .edit{
+        font-size: 30px !important;
+        color: #1ab394 !important;
+    }
+}
+
+.edit{
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    top: 10px;
+    color: #dadada;
+    cursor: pointer;
+    font-size: 20px;
+}
+.edit:hover{
+    font-size: 30px;
+    color: #1ab394;
+}
