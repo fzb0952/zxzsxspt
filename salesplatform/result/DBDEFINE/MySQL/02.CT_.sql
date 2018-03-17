@@ -104,7 +104,7 @@ create table DB_SALESPLATFORM.T_ORDER
     C_BH                 char(32)                             NOT NULL     comment '编号',
     N_NUM                int                                  NULL         comment '数量',
     C_GOODS              char(32)                             NULL         comment '商品编号',
-    C_PAY                char(300)                            NULL         comment '是否付款'
+    C_PAY                varchar(300)                         NULL         comment '是否付款'
 ) comment = '订单表' ;
 
 
