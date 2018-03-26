@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdtu.salesplatform.dao.TCarMapper" >
+  <resultMap id="BaseResultMap" type="com.cdtu.salesplatform.bean.TCar" >
+    <result column="C_BH" property="cBh" jdbcType="CHAR" />
+    <result column="N_NUM" property="nNum" jdbcType="INTEGER" />
+    <result column="C_GOODS" property="cGoods" jdbcType="CHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cdtu.salesplatform.bean.TCar" >
+    insert into t_car (C_BH, N_NUM, C_GOODS)
+    values (#{cBh,jdbcType=CHAR}, #{nNum,jdbcType=INTEGER}, #{cGoods,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdtu.salesplatform.bean.TCar" >
+    insert into t_car
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        C_BH,
+      </if>
+      <if test="nNum != null" >
+        N_NUM,
+      </if>
+      <if test="cGoods != null" >
+        C_GOODS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        #{cBh,jdbcType=CHAR},
+      </if>
+      <if test="nNum != null" >
+        #{nNum,jdbcType=INTEGER},
+      </if>
+      <if test="cGoods != null" >
+        #{cGoods,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

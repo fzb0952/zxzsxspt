@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdtu.salesplatform.dao.TTipsMapper" >
+  <resultMap id="BaseResultMap" type="com.cdtu.salesplatform.bean.TTips" >
+    <result column="C_BH" property="cBh" jdbcType="CHAR" />
+    <result column="C_TIP" property="cTip" jdbcType="VARCHAR" />
+    <result column="C_TYPE" property="cType" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cdtu.salesplatform.bean.TTips" >
+    insert into t_tips (C_BH, C_TIP, C_TYPE
+      )
+    values (#{cBh,jdbcType=CHAR}, #{cTip,jdbcType=VARCHAR}, #{cType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdtu.salesplatform.bean.TTips" >
+    insert into t_tips
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        C_BH,
+      </if>
+      <if test="cTip != null" >
+        C_TIP,
+      </if>
+      <if test="cType != null" >
+        C_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        #{cBh,jdbcType=CHAR},
+      </if>
+      <if test="cTip != null" >
+        #{cTip,jdbcType=VARCHAR},
+      </if>
+      <if test="cType != null" >
+        #{cType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

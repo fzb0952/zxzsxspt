@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdtu.salesplatform.dao.TRoleRightMapper" >
+  <resultMap id="BaseResultMap" type="com.cdtu.salesplatform.bean.TRoleRight" >
+    <result column="C_BH" property="cBh" jdbcType="CHAR" />
+    <result column="C_ROLE" property="cRole" jdbcType="CHAR" />
+    <result column="C_RIGHT" property="cRight" jdbcType="CHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cdtu.salesplatform.bean.TRoleRight" >
+    insert into t_role_right (C_BH, C_ROLE, C_RIGHT)
+    values (#{cBh,jdbcType=CHAR}, #{cRole,jdbcType=CHAR}, #{cRight,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdtu.salesplatform.bean.TRoleRight" >
+    insert into t_role_right
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        C_BH,
+      </if>
+      <if test="cRole != null" >
+        C_ROLE,
+      </if>
+      <if test="cRight != null" >
+        C_RIGHT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        #{cBh,jdbcType=CHAR},
+      </if>
+      <if test="cRole != null" >
+        #{cRole,jdbcType=CHAR},
+      </if>
+      <if test="cRight != null" >
+        #{cRight,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
