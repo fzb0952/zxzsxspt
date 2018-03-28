@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdtu.salesplatform.dao.TMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.cdtu.salesplatform.bean.TMessage" >
+    <result column="C_BH" property="cBh" jdbcType="CHAR" />
+    <result column="C_MESSAGE" property="cMessage" jdbcType="VARCHAR" />
+    <result column="D_ADDDATE" property="dAdddate" jdbcType="DATE" />
+    <result column="C_NAME" property="cName" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cdtu.salesplatform.bean.TMessage" >
+    insert into t_message (C_BH, C_MESSAGE, D_ADDDATE, 
+      C_NAME)
+    values (#{cBh,jdbcType=CHAR}, #{cMessage,jdbcType=VARCHAR}, #{dAdddate,jdbcType=DATE}, 
+      #{cName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdtu.salesplatform.bean.TMessage" >
+    insert into t_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        C_BH,
+      </if>
+      <if test="cMessage != null" >
+        C_MESSAGE,
+      </if>
+      <if test="dAdddate != null" >
+        D_ADDDATE,
+      </if>
+      <if test="cName != null" >
+        C_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cBh != null" >
+        #{cBh,jdbcType=CHAR},
+      </if>
+      <if test="cMessage != null" >
+        #{cMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="dAdddate != null" >
+        #{dAdddate,jdbcType=DATE},
+      </if>
+      <if test="cName != null" >
+        #{cName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
