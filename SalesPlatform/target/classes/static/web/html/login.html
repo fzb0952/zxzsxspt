@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../js/bootstrap/bootstrap.min.css" />
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('../js/bootstrap/glyphicons-halflings-regular.eot');
+            src: url('../js/bootstrap/glyphicons-halflings-regular.eot?#iefix')
+            format('embedded-opentype'),
+            url('../js/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+            url('../js/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+            url('../js/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
+            format('svg');
+        }
+        .mycenter {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2%;
+        }
+
+        .mycenter input, button {
+            margin-top: 2%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        #div1 {
+            position: relative;
+            margin: 0 auto;
+            background-color: #FFC;
+            width: 300px;
+            height: 300px;
+        }
+
+        .bg {
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+    </style>
+</head>
+<body style="overflow:hidden">
+<div class="bg">
+    <img src="../images/login.jpg" width="100%" height="100%"/>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div id="div1">
+
+                <form action="@{/se}" method="post">
+                    <div class="mycenter">
+
+                        <div class="col-lg-11 test-center test-info">
+                            <h2>please sign in</h2>
+                        </div>
+                        <div class="col-lg-10 col-lg-offset-1"><span id="a"></span></div>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" name="username"
+                                   placeholder="Username" required autofocus style="width:90%;" id="username"/>
+                        </div>
+                        <div class="col-lg-10"><br/></div>
+                        <div class="col-lg-12">
+                            <input type="password" class="form-control" name="password"
+                                   placeholder="Password" required autofocus style="width:90%;" id="password"/>
+                        </div>
+                        <div class="col-lg-10"><br/></div>
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <input type="radio" name="logintype" value="student"
+                                   checked="checked" style="margin-right:0; margin-left:0;">student
+                            <input type="radio" name="logintype" value="teacher"
+                                   style="margin-right:0; margin-left:0;">teacher
+                            <a href="http://localhost:8080/Wisdom/Register.jsp" style="font-size: 18px;float: right;">register</a>
+                        </div>
+                        <div class="col-lg-10"><br/></div>
+
+                        <div>
+                            <a href="#">
+                                <button type="submit"
+                                        class="btn btn-success" style="width:85%;">login
+                                </button>
+                            </a>
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

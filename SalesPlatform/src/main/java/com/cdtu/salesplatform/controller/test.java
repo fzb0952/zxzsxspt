@@ -10,7 +10,7 @@ package com.cdtu.salesplatform.controller;
  */
 @Controller
 public class test {
-    @RequestMapping("/")
+    @RequestMapping("/se")
     @ResponseBody
     String home() {
         return "test";
