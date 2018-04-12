@@ -97,4 +97,7 @@
       </if>
     </trim>
   </insert>
+  <select id = "searchUser" resultMap = "BaseResultMap">
+      select c_username from t_user where c_username = #{userName} and c_password = #{passWord}
+  </select>
 </mapper>

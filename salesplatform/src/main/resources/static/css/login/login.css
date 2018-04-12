@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+@font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('../js/bootstrap/glyphicons-halflings-regular.eot');
+            src: url('../js/bootstrap/glyphicons-halflings-regular.eot?#iefix')
+            format('../embedded-opentype'),
+            url('../js/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+            url('../js/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+            url('../js/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
+            format('svg');
+        }
+        .mycenter {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2%;
+        }
+
+        .mycenter input, button {
+            margin-top: 2%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        #div1 {
+            position: relative;
+            margin: 0 auto;
+            background-color: #FFC;
+            width: 300px;
+            height: 300px;
+        }
+
+        .bg {
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }
