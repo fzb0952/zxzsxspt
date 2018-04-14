@@ -6,12 +6,20 @@
     <meta name="keywords" content="keyword1,keyword2,keyword3">
     <meta name="description" content="this is my page">
     <meta name="content-type" content="text/html; charset=UTF-8">
-    
+    <script src="../js/vue/vue.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 
   </head>
   
   <body>
-    This is my HTML page. <br>
+    <div id="app">{{message}}</div>
   </body>
+  <script type="text/javascript">
+     new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+}) 
+  </script>
 </html>
